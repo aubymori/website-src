@@ -1,0 +1,88 @@
+#home-profile-pic {
+    border: 2px dashed #fff;
+    align-self: stretch;
+}
+
+#home-header {
+    margin-block: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    align-self: stretch;
+}
+
+#home-header img {
+    image-rendering: crisp-edges;
+    margin-inline-start: 6px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.social-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+    margin-inline-end: 4px;
+}
+
+.social-icon.github {
+    background-image: url("/assets/img/github.png");
+}
+
+.social-icon.youtube {
+    background-image: url("/assets/img/youtube.png");
+}
+
+.social-icon.twitter {
+    background-image: url("/assets/img/twitter.png");
+}
+
+.social-icon.bsky {
+    background-image: url("/assets/img/bsky.png");
+}
+
+.social-icon.winclassic {
+    background-image: url("/assets/img/winclassic.png");
+}
+
+.social-icon.discord {
+    background-image: url("/assets/img/discord.png");
+}
+
+@media not all and (max-resolution: 1dppx) {
+    .social-icon.github {
+        background-image: url("/assets/img/github@2x.png");
+    }
+    
+    .social-icon.youtube {
+        background-image: url("/assets/img/youtube@2x.png");
+    }
+    
+    .social-icon.twitter {
+        background-image: url("/assets/img/twitter@2x.png");
+    }
+
+    .social-icon.bsky {
+        background-image: url("/assets/img/bsky@2x.png");
+    }
+    
+    .social-icon.winclassic {
+        background-image: url("/assets/img/winclassic@2x.png");
+    }
+    
+    .social-icon.discord {
+        background-image: url("/assets/img/discord@2x.png");
+    }
+}
+
+.button-row:not(.last) {
+    margin-block-end: 4px;
+}
+
+.button-row > a {
+    margin-inline-end: 4px;
+}

@@ -1,0 +1,9 @@
+# This file only exists for testing purposes. It replicates
+# GitHub Pages allowing the omitting of .html from page URLs.
+
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

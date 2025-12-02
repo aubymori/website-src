@@ -1,0 +1,22 @@
+.file-info > hbox > b {
+    margin-inline-end: 4px;
+}
+
+.file-info > * {
+    margin-block-end: 1em;
+}
+
+.download-link {
+    display: flex;
+    flex-direction: row;
+    margin-inline-end: 4px;
+}
+
+.download-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    image-rendering: crisp-edges;
+    margin-inline-end: 4px;
+    background: no-repeat url("/assets/img/download.png");
+}

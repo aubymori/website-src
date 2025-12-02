@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">  
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{{ title ? title ~ " - " }}aubymori's website</title>
+        <link rel="stylesheet" href="/assets/css/global.css"/>
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        <box id="image-viewer" align="center" pack="center">
+            <vbox align="start">
+                <img id="image-viewer-image"/>
+                <a id="image-viewer-link" target="_blank">view original file</a>
+            </vbox>
+        </box>
+        <vbox id="root" align="stretch">
+            <hbox id="header" align="stretch">
+                <box id="nav" align="center">
+                    <a href="/" id="logo" class="nav-item">
+                        <span class="nav-label">aubymori</span>
+                    </a>
+                    <a href="#!/files" class="nav-item">
+                        <span class="nav-label">files</span>
+                    </a>
+                    <a href="#!/desktops" class="nav-item">
+                        <span class="nav-label">desktops</span>
+                    </a>
+                    <a href="#!/tools" class="nav-item">
+                        <span class="nav-label">tools</span>
+                    </a>
+                    <a href="#!/guides" class="nav-item">
+                        <span class="nav-label">guides</span>
+                    </a>
+                </box>
+            </hbox>
+            <vbox id="content">
+                {% block content %}{% endblock %}
+            </vbox>
+            <span id="copyright">aubymori &copy; {{ "now"|date("Y") }}</span>
+        </vbox>
+        {% block js %}{% endblock %}
+    </body>
+</html>
