@@ -1,1 +1,40 @@
-{% extends "core.html" %}
+{% extends "two_col_page.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/assets/css/home.css"/>
+{% endblock %}
+
+{% macro social(url, icon, username) %}
+<a class="social" href="{{ url }}" target="_blank">
+    <span class="social-icon {{ icon }}"></span>
+    {{ username }}
+</a>
+{% endmacro %}
+
+{% block col_one_content %}
+<img id="home-profile-pic" src="https://avatars.githubusercontent.com/u/44238627?v=4" alt="aubymori"/>
+<hbox id="home-header" align="center">
+    <span class="header">aubymori</span>
+    <img src="/assets/img/trans.png" alt="transgender flag"/>
+    <img src="/assets/img/lesb.png" alt="lesbian flag"/>
+</hbox>
+<p>
+    Likes to mod Windows, has written over 50 mods for
+    <a href="https://windhawk.net/" target="_blank">Windhawk</a>.
+</p>
+<span class="header-small no-margin">Socials</span>
+{{ _self.social("https://github.com/aubymori",       "github",     "@aubymori") }}
+{{ _self.social("https://www.youtube.com/@aubymori", "youtube",    "@aubymori") }}
+{{ _self.social("https://twitter.com/aubymori",      "twitter",    "@aubymori") }}
+{{ _self.social(
+    "https://bsky.app/profile/audymori.bsky.social", "bsky",       "@audymori.bsky.social") }}
+{{ _self.social("https://winclassic.net/user/2712",  "winclassic", "aubymori") }}
+<div class="social">
+    <span class="social-icon discord"></span>
+    <span title="(ID: 830652734364844052)">@ooburiimori</span>
+</div>
+{% endblock %}
+
+{% block col_two_content %}
+
+{% endblock %}

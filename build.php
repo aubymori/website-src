@@ -52,10 +52,16 @@ else
     /* Symlink assets */
     symlink(BuildContext::$workingDir . "/assets", $assets_dir);
 
+    /* Add Apache .htaccess */
     copy(
         BuildContext::$workingDir . "/.htaccess",
         BuildContext::$outDir     . "/.htaccess");
 }
+
+/* Copy favicon */
+copy(
+    BuildContext::$workingDir . "/favicon.ico",
+    BuildContext::$outDir     . "/favicon.ico");
 
 /* Pages */
 
