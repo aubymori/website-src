@@ -1,12 +1,12 @@
 {% extends "core.html" %}
 
 {% block content %}
-    <hbox class="two-col-container">
-        <vbox id="left-col" class="card">
+    <div id="two-col-container">
+        <div id="left-col" class="card">
             {% block col_one_content %}{% endblock %}
-        </vbox>
-        <vbox id="right-col" class="card">
+        </div>{#
+      #}<div id="main-content" class="card">
             {% block col_two_content %}{% endblock %}
-        </vbox>
-    </hbox>
+        </div>
+    </div>
 {% endblock %}

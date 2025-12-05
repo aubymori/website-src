@@ -1,6 +1,7 @@
 #home-profile-pic {
     border: 2px dashed #fff;
-    align-self: stretch;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 #home-header {

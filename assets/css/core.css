@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #000 url("/assets/img/bg.png") no-repeat;
+    color: #fff;
+}
+
+body, input, button, textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+}
+
+a {
+    text-decoration: none;
+    color: #6A2ABF !important;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+#root {
+    width: 900px;
+}
+
+#header {
+    height: 75px;
+    padding: 17px 0;
+    box-sizing: border-box;
+}
+
+#logo {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#logo:hover,
+#logo:focus {
+    text-shadow: 0 0 10px white;
+}
+
+#nav {
+    background: #000;
+    padding: 8px;
+}
+
+#nav a {
+    color: #fff !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 8px;
+}
+
+#content {
+    margin: 8px 0;
+}
+
+.card {
+    background: #000;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#two-col-container > div {
+    display: inline-block;
+}
+
+#two-col-container #main-content {
+    width: 642px;
+}
+
+#left-col {
+    background: #3e3b51;
+    margin-right: 8px;
+    width: 250px;
+}
+
+#left-col a {
+    color: #957ABA !important;
+}
+
+#main-content {
+    vertical-align: top;
+}
