@@ -46,16 +46,26 @@ if ($prod_mode)
 
     /* Remove Apache .htaccess */
     @unlink(BuildContext::$outDir . "/.htaccess");
+
+    /* Add GitHub 404.md */
+    file_put_contents(BuildContext::$outDir . "/404.md",
+        "---\n" .
+        "permalink: /404.html\n" .
+        "---"
+    );
 }
 else
 {
     /* Symlink assets */
     symlink(BuildContext::$workingDir . "/assets", $assets_dir);
 
+    /* Remove GitHub 404.md */
+    @unlink(BuildContext::$outDir . "/404.md");
+
     /* Add Apache .htaccess */
     copy(
         BuildContext::$workingDir . "/.htaccess",
-        BuildContext::$outDir     . "/.htaccess");
+        BuildContext::$outDir     . "/.htaccess");   
 }
 
 /* Copy favicon */
