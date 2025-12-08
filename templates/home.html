@@ -85,3 +85,13 @@
     ) }}
 </ul>
 {% endblock %}
+
+{% block early_js %}
+<script>
+    // Redirect legacy soft-nav URLs
+    if (location.hash.substring(0, 3) == "#!/")
+    {
+        location.href = location.hash.substring(2).replaceAll("-", "_");
+    }
+</script>
+{% endblock %}
