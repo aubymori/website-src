@@ -4,6 +4,16 @@
 <link rel="stylesheet" href="/assets/css/home.css">
 {% endblock %}
 
+{% block early_js %}
+<script>
+    // Redirect legacy soft-nav URLs
+    if (location.hash.substring(0, 3) == "#!/")
+    {
+        location.href = location.hash.substring(2).replaceAll("-", "_");
+    }
+</script>
+{% endblock %}
+
 {% macro social(url, icon, username) %}
 <a class="social" href="{{ url }}" target="_blank">
     <span class="social-icon {{ icon }}"></span>
@@ -84,14 +94,4 @@
         "Lots of mods for Windhawk (50+)", "https://github.com/ramensoftware/windhawk-mods/pulls?q=is%3Apr+author%3Aaubymori+"
     ) }}
 </ul>
-{% endblock %}
-
-{% block early_js %}
-<script>
-    // Redirect legacy soft-nav URLs
-    if (location.hash.substring(0, 3) == "#!/")
-    {
-        location.href = location.hash.substring(2).replaceAll("-", "_");
-    }
-</script>
 {% endblock %}
