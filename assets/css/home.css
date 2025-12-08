@@ -28,6 +28,10 @@
     margin-bottom: 4px;
 }
 
+.header-small + .social {
+    margin-top: 4px;
+}
+
 .social-icon {
     display: block;
     width: 16px;

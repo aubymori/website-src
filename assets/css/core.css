@@ -17,12 +17,16 @@ body, input, button, textarea {
 
 a {
     text-decoration: none;
-    color: #6A2ABF !important;
+    color: #7931d8 !important;
 }
 
 a:hover,
 a:focus {
     text-decoration: underline;
+}
+
+ul {
+    padding-left: 25px;
 }
 
 #root {
@@ -107,4 +111,9 @@ a:focus {
 
 #right-col {
     vertical-align: top;
+}
+
+.header-small {
+    font-weight: 700;
+    text-transform: uppercase;
 }

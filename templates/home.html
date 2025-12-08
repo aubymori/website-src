@@ -1,7 +1,7 @@
 {% extends "two_col_page.html" %}
 
 {% block css %}
-<link rel="stylesheet" href="/assets/css/home.css"/>
+<link rel="stylesheet" href="/assets/css/home.css">
 {% endblock %}
 
 {% macro social(url, icon, username) %}
@@ -19,8 +19,7 @@
     <img src="/assets/img/lesb.png" alt="lesbian flag"/>
 </div>
 <p>
-    Likes to mod Windows, has written over 50 mods for
-    <a href="https://windhawk.net/" target="_blank">Windhawk</a>.
+    Autistic nerd who likes how software looked in the late 1990s and 2000s.
 </p>
 <span class="header-small no-margin">Socials</span>
 {{ _self.social("https://github.com/aubymori",       "github",     "@aubymori") }}
@@ -35,7 +34,54 @@
 </div>
 {% endblock %}
 
+{% macro project_entry(name, url, desc) %}
+<li>
+    <a href="{{ url }}" target="_blank">{{ name }}</a>{% if desc %}: {{ desc }}{% endif %}
+</li>
+{% endmacro %}
+
 {% block col_two_content %}
-<h1>Hi bRUH</h1>
-<p>hi</p>
+<h1>Welcome!</h1>
+<p>
+    My name is Aubrey and I'm a 17 year old trans girl interested in computers and programming.
+    I mostly work to restore old/legacy user interfaces for Windows, Windows programs, and
+    websites.
+</p>
+<p>
+    Here are some projects I have worked on, either now or in the past:
+</p>
+<ul>
+    {{ _self.project_entry(
+        "Rehike", "https://github.com/Rehike/Rehike",
+        "A custom YouTube server that aims to faithfully restore the old frontend and layout."
+    ) }}
+    {{ _self.project_entry(
+        "OpenWithEx", "https://github.com/aubymori/OpenWithEx",
+        "An application that replaces the native Open With dialog with one styled after old Windows versions."
+    ) }}
+    {{ _self.project_entry(
+        "TaskManagerEx", "https://github.com/aubymori/TaskManagerEx",
+        "A fork of Windows XP's Task Manager which works better on modern Windows and has more features."
+    ) }}
+    {{ _self.project_entry(
+        "MSPA To Go", "https://mspa.chadthundercock.com/",
+        "A mirror of MS Paint Adventures that includes both a mobile and desktop layout."
+    ) }}
+    {{ _self.project_entry(
+        "ClassicShutdown", "https://github.com/aubymori/ClassicShutdown",
+        "A recreation of various shutdown/log off dialogs from older Windows versions."
+    ) }}
+    {{ _self.project_entry(
+        "Windows NT Modding Utility", "https://get-ntmu.github.io/",
+        "An application that allows users to automate the modification/replacement of system files and the importing of registry entries."
+    ) }}
+    <li>
+        Rewitter: A classic Twitter frontend that works similarly to Rehike. It is heavily unfinished
+        and not publicly available right now, but if you want to see previews, check out the
+        <a href="https://twitter.com/leym0naide" target="_blank">main developer's Twitter page</a>.
+    </li>
+    {{ _self.project_entry(
+        "Lots of mods for Windhawk (50+)", "https://github.com/ramensoftware/windhawk-mods/pulls?q=is%3Apr+author%3Aaubymori+"
+    ) }}
+</ul>
 {% endblock %}

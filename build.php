@@ -66,3 +66,4 @@ copy(
 /* Pages */
 
 build_page("home", "index");
+build_page("404", "404");
