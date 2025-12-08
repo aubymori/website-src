@@ -1,12 +1,17 @@
 {% extends "core.html" %}
 
+{% set two_col_page = true %}
+
 {% block content %}
     <div id="two-col-container">
-        <div id="left-col" class="card">
+        <div id="left-col" class="box">
             {% block col_one_content %}{% endblock %}
         </div>{#
-      #}<div id="main-content" class="card">
-            {% block col_two_content %}{% endblock %}
+      #}<div id="right-col">
+            <div id="main-content" class="box">
+                {% block col_two_content %}{% endblock %}
+            </div>
+            <span id="copyright">Copyright &copy; {{ "now"|date("Y") }} aubymori</span>
         </div>
     </div>
 {% endblock %}

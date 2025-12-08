@@ -5,14 +5,20 @@
 }
 
 #home-header {
-    margin-block: 4px;
     border-bottom: 1px solid rgba(255, 255, 255, .35);
-    align-self: stretch;
+}
+
+#home-header > * {
+    display: inline-block;
+}
+
+#home-header h2 {
+    margin: 4px 0;
 }
 
 #home-header img {
-    image-rendering: crisp-edges;
-    margin-inline-start: 6px;
+    image-rendering: pixelated;
+    margin-left: 6px;
 }
 
 .social {
@@ -27,7 +33,7 @@
     width: 16px;
     height: 16px;
     background-size: 16px 16px;
-    margin-inline-end: 4px;
+    margin-right: 4px;
 }
 
 .social-icon.github {
@@ -81,9 +87,9 @@
 }
 
 .button-row:not(.last) {
-    margin-block-end: 4px;
+    margin-bottom: 4px;
 }
 
 .button-row > a {
-    margin-inline-end: 4px;
+    margin-right: 4px;
 }

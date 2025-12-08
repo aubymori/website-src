@@ -21,7 +21,10 @@
             <div id="content">
                 {% block content %}{% endblock %}
             </div>
-            <span id="copyright">&copy; {{ "now"|date("Y") }} aubymori</span>
+            {# On two col pages, we display copyright below the right col #}
+            {%- if not two_col_page -%}
+            <span id="copyright">Copyright &copy; {{ "now"|date("Y") }} aubymori</span>
+            {%- endif -%}
         </div>
         {% block js %}{% endblock %}
     </body>

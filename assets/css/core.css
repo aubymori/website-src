@@ -37,6 +37,7 @@ a:focus {
 
 #logo {
     color: #fff !important;
+    text-decoration: none !important;
     font-weight: 700;
     font-size: 32px;
 }
@@ -62,8 +63,8 @@ a:focus {
     margin: 8px 0;
 }
 
-.card {
-    background: #000;
+.box {
+    background: #111;
     padding: 8px;
     box-sizing: border-box;
 }
@@ -72,20 +73,38 @@ a:focus {
     display: inline-block;
 }
 
-#two-col-container #main-content {
+#main-content {
+    width: 900px;
+}
+
+#main-content > :first-child {
+    margin-top: 0;
+}
+
+#main-content > :last-child {
+    margin-bottom: 0;
+}
+
+#right-col,
+#right-col #main-content {
     width: 642px;
+}
+
+#right-col #main-content {
+    margin-bottom: 8px;
 }
 
 #left-col {
     background: #3e3b51;
     margin-right: 8px;
     width: 250px;
+    float: left;
 }
 
 #left-col a {
     color: #957ABA !important;
 }
 
-#main-content {
+#right-col {
     vertical-align: top;
 }
