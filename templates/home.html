@@ -22,11 +22,11 @@
 {% endmacro %}
 
 {% block col_one_content %}
-<img id="home-profile-pic" src="https://avatars.githubusercontent.com/u/44238627?v=4" alt="aubymori"/>
+<img id="home-profile-pic" src="https://avatars.githubusercontent.com/u/44238627?v=4" alt="aubymori">
 <div id="home-header">
     <h2>aubymori</h2>
-    <img src="/assets/img/trans.png" alt="transgender flag"/>
-    <img src="/assets/img/lesb.png" alt="lesbian flag"/>
+    <img src="/assets/img/trans.png" alt="transgender flag">
+    <img src="/assets/img/lesb.png" alt="lesbian flag">
 </div>
 <p>
     Autistic nerd who likes how software looked in the late 1990s and 2000s.
@@ -84,6 +84,10 @@
     {{ _self.project_entry(
         "Windows NT Modding Utility", "https://get-ntmu.github.io/",
         "An application that allows users to automate the modification/replacement of system files and the importing of registry entries."
+    ) }}
+    {{ self.project_entry(
+        "ExplorerEx", "https://github.com/kfh83/ExplorerEx",
+        "A port of Windows XP's Explorer shell (Start menu and taskbar) to modern Windows with some minor improvements."
     ) }}
     <li>
         Rewitter: A classic Twitter frontend that works similarly to Rehike. It is heavily unfinished

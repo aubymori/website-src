@@ -77,3 +77,4 @@ copy(
 
 build_page("home", "index");
 build_page("404", "404");
+build_page("desktops", "desktops");

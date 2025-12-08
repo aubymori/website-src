@@ -5,7 +5,6 @@ html {
 body {
     min-height: 100%;
     margin-top: 0;
-    margin-bottom: 0;
     background: #000 url("/assets/img/bg.png") no-repeat;
     color: #fff;
 }
@@ -71,6 +70,10 @@ ul {
     background: #111;
     padding: 8px;
     box-sizing: border-box;
+}
+
+.box > * {
+    max-width: 100%;
 }
 
 #two-col-container > div {
