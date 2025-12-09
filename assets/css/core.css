@@ -5,6 +5,7 @@ html {
 body {
     min-height: 100%;
     margin-top: 0;
+    margin-bottom: 0;
     background: #000 url("/assets/img/bg.png") no-repeat;
     color: #fff;
 }
@@ -120,13 +121,18 @@ body.image-viewer-visible #image-viewer {
     margin: 8px 0;
 }
 
+#copyright {
+    padding-bottom: 8px;
+}
+
 .box {
     background: #111;
     padding: 8px;
     box-sizing: border-box;
 }
 
-.box > * {
+.box > *,
+.box img {
     max-width: 100%;
 }
 
@@ -173,4 +179,15 @@ body.image-viewer-visible #image-viewer {
 .header-small {
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.subnav {
+    margin: 0;
+    margin-top: 6px;
+    padding: 0;
+    list-style: none;
+}
+
+.subnav-item.selected {
+    font-weight: 700;
 }

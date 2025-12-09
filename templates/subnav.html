@@ -2,9 +2,9 @@
 
 {% block col_one_content %}
 <span class="header-small">{{ subnav.title }}</span>
-<ul>
+<ul class="subnav">
     {% for item in subnav.items %}
-    <li class="nav-item {{ item.selected ? "selected" }}">
+    <li class="subnav-item {{ item.selected ? "selected" }}">
         {% if item.selected %}
         <span>{{ item.title }}</span>
         {% else %}

@@ -91,7 +91,8 @@ $files = [
         "description" => <<<MULTILINE
             Files necessary to restore the classic DirectUI User Account Control GUI Windows 10 versions 1703 and up. x86-64 only.
 
-            NOTE: This is deprecated. You should check out <a href="https://get-ntmu.github.io/#!/pack/classicuac">the NTMU pack</a>instead.
+            <b>NOTE: This is deprecated. You should check out <a href="https://get-ntmu.github.io/#!/pack/classicuac">the NTMU pack</a>
+            instead.</b>
             MULTILINE
     ],
     (object)[
@@ -107,6 +108,117 @@ $files = [
 
             You should probably use <a href="https://winclassic.net/thread/2588/explorer7-windows-explorer-10-11">explorer7</a>
             instead but I will keep this up for historical purposes.
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Old Ease of Access Files",
+        "id" => "old_utilman",
+        "name" => "old-utilman.zip",
+        "preview" => (object)[
+            "image" => "old-utilman-preview.png",
+            "alt" => "Old Ease of Access"
+        ],
+        "description" => <<<MULTILINE
+            Files necessary to restore the Windows 7 Ease of Access dialog on the
+            logon UI.
+
+            <a target="_blank" href="https://winclassic.net/thread/2345/windows-7-ease-access-dialog">
+                Instructions
+            </a>
+
+            <b>NOTE: This is deprecated. You should check out
+            <a href="https://get-ntmu.github.io/#!/pack/old-utilman">the NTMU pack</a>
+            instead.</b>
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Custom CMD Version Text Files",
+        "id" => "custom_cmd_ver_text",
+        "name" => "CustomCmdVerText.zip",
+        "preview" => (object)[
+            "image" => "custom-cmd-ver-text-preview.png",
+            "alt" => "CMD with custom version text"
+        ],
+        "description" => <<<MULTILINE
+            Files necessary to change the CMD version text without breaking batch scripts.
+            Instructions included.
+
+            <b>
+            NOTE: This is deprecated You should check out
+            the <a href="https://windhawk.net/mods/custom-cmd-startup-text">Custom Command Prompt
+            Startup Text</a> Windhawk mod instead.
+            </b>
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Windows 7 Network Flyout",
+        "id" => "win7_network_flyout",
+        "name" => "pnidui.zip",
+        "preview" => (object)[
+            "image" => "win7-network-flyout-preview.png",
+            "alt" => "Windows 7 Network Flyout on Windows 10"
+        ],
+        "description" => <<<MULTILINE
+            Files necessary to restore the Windows 7 Network Flyout
+            Windows 10. Only en-US included, installer also included.
+            
+            <b>
+            NOTE: This is deprecated. You should check out
+            <a href="https://get-ntmu.github.io/#!/pack/win7-tray-items">the NTMU pack</a>
+            instead.
+            </b>
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Windows 7 Tray Icons Pack",
+        "id" => "win7_tray_pack",
+        "name" => "win7tray.zip",
+        "preview" => (object)[
+            "image" => "win7-tray-pack-preview.png",
+            "alt" => "Windows 7 Tray Icons"
+        ],
+        "description" => <<<MULTILINE
+            Files for all the various Windows 7 tray icons
+            and flyouts (excluding clock). Comes with an installer.
+            en-US only.
+            
+            <b>
+            NOTE: This is deprecated. You should check out
+            <a href="https://get-ntmu.github.io/#!/pack/win7-tray-items">the NTMU pack</a>
+            instead.
+            </b>
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Windows Games Explorer",
+        "id" => "gameux",
+        "name" => "gameux.zip",
+        "preview" => (object)[
+            "image" => "gameux-preview.png",
+            "alt" => "Games Explorer"
+        ],
+        "description" => <<<MULTILINE
+            Files to restore the Games Explorer in later Windows
+            10. en-US only, installer included.
+            
+            <b>
+            NOTE: This is deprecated. You should check out
+            <a href="https://get-ntmu.github.io/#!/pack/gameux">the NTMU pack</a>
+            instead.
+            </b>
+            MULTILINE
+    ],
+    (object)[
+        "title" => "Windows XP Summary Tab",
+        "id" => "docprop2",
+        "name" => "docprop2.zip",
+        "preview" => (object)[
+            "image" => "docprop2-preview.png",
+            "alt" => "Summary Tab"
+        ],
+        "description" => <<<MULTILINE
+            Files to restore the "Summary" tab from Windows XP to Windows 10's
+            properties dialog. Instructions included.
             MULTILINE
     ],
 ];
@@ -135,7 +247,7 @@ foreach ($files as $i => $file)
     $data->file->description = str_replace("\r\n", "\n", $data->file->description);
     // Convert double newlines into single newlines and delete
     // single newlines
-    $data->file->description = preg_replace("/\n(?!\n)/", "", $data->file->description);
+    $data->file->description = preg_replace("/\n(?!\n)/", " ", $data->file->description);
 
     $filesize = filesize(BuildContext::$workingDir . "/assets/files/" . $file->name);
     $suffixes = [ " bytes", " KB", " MB", " GB" ];
