@@ -22,10 +22,12 @@
 }
 
 .social {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: block;
     margin-bottom: 4px;
+}
+
+.social > span {
+    vertical-align: middle;
 }
 
 .header-small + .social {
@@ -33,7 +35,7 @@
 }
 
 .social-icon {
-    display: block;
+    display: inline-block;
     width: 16px;
     height: 16px;
     background-size: 16px 16px;
