@@ -2,7 +2,7 @@
 
 function build_page(
 	string $template_name,
-	string $out_name,
+	string $out_name = "",
 	array  $data = [],
 ): void
 {
@@ -12,11 +12,21 @@ function build_page(
 		BuildContext::$twig = new \Twig\Environment($loader, []);
 	}
 
+    if ($out_name == "")
+    {
+        $out_name = $template_name;
+    }
+
 	echo "Building page $out_name... (Template: $template_name)\n";
 	try
 	{
 		$html = BuildContext::$twig->render("$template_name.html", $data);
-		file_put_contents(BuildContext::$outDir . "/" . $out_name . ".html", $html);
+        $out_file = BuildContext::$outDir . "/" . $out_name . ".html";
+        @mkdir(
+            dirname($out_file),
+            recursive: true
+        );
+		file_put_contents($out_file, $html);
 	}
 	catch (\Throwable $e)
 	{

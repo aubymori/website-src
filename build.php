@@ -76,5 +76,75 @@ copy(
 /* Pages */
 
 build_page("home", "index");
-build_page("404", "404");
-build_page("desktops", "desktops");
+build_page("404");
+build_page("desktops");
+
+$files = [
+    (object)[
+        "title" => "Classic UAC",
+        "id" => "classic_uac",
+        "name" => "1607uac.zip",
+        "preview" => (object)[
+            "image" => "classic-uac-preview.png",
+            "alt" => "Classic User Account Control GUI"
+        ],
+        "description" => <<<MULTILINE
+            Files necessary to restore the classic DirectUI User Account Control GUI Windows 10 versions 1703 and up. x86-64 only.
+
+            NOTE: This is deprecated. You should check out <a href="https://get-ntmu.github.io/#!/pack/classicuac">the NTMU pack</a>instead.
+            MULTILINE
+    ],
+    (object)[
+        "title" => "StartIsBack++ Patch",
+        "id" => "sib_patch",
+        "name" => "HelpPaneandSIBMods.7z",
+        "preview" => (object)[
+            "image" => "sib-patch-preview.png",
+            "alt" => "Start menu with the SIB++ patch"
+        ],
+        "description" => <<<MULTILINE
+            Patched StartIsBack++ 2.9.19 DLL which adds the "Help and Support" right pane item as an option, reduces padding in the programs list, and restores scrollbars all with the goal of improving accuracy to Windows 7. x86-64 only.
+
+            You should probably use <a href="https://winclassic.net/thread/2588/explorer7-windows-explorer-10-11">explorer7</a>
+            instead but I will keep this up for historical purposes.
+            MULTILINE
+    ],
+];
+
+$subnav_data = (object)[
+    "subnav" => (object)[
+        "title" => "Files",
+        "items" => [],
+    ]
+];
+foreach ($files as $file)
+{
+    $subnav_data->subnav->items[] = (object)[
+        "title" => $file->title,
+        "url" => "/files/" . $file->id
+    ];
+}
+
+foreach ($files as $i => $file)
+{
+    $data = $subnav_data;
+    $data->subnav->items[$i]->selected = true;
+
+    $data->file = $file;
+    // Ensure uniform line endings
+    $data->file->description = str_replace("\r\n", "\n", $data->file->description);
+    // Convert double newlines into single newlines and delete
+    // single newlines
+    $data->file->description = preg_replace("/\n(?!\n)/", "", $data->file->description);
+
+    $filesize = filesize(BuildContext::$workingDir . "/assets/files/" . $file->name);
+    $suffixes = [ " bytes", " KB", " MB", " GB" ];
+    $factor = min(floor((strlen((string)$filesize) - 1) / 3), count($suffixes) - 1);
+    $formatted_filesize = sprintf("%.2f", $filesize / pow(1024, $factor)) . $suffixes[$factor];
+
+    $data->file->size = $formatted_filesize;
+
+    build_page("files", "files/" . $file->id, (array)$data);
+
+    $data->subnav->items[$i]->selected = false;
+}

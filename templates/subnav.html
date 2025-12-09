@@ -1,0 +1,16 @@
+{% extends "two_col_page.html" %}
+
+{% block col_one_content %}
+<span class="header-small">{{ subnav.title }}</span>
+<ul>
+    {% for item in subnav.items %}
+    <li class="nav-item {{ item.selected ? "selected" }}">
+        {% if item.selected %}
+        <span>{{ item.title }}</span>
+        {% else %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

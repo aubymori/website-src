@@ -1,0 +1,29 @@
+{% extends "subnav.html" %}
+
+{% set title = file.title %}
+
+{% set using_image_viewer = not not file.preview %}
+
+{% block col_two_content %}
+<h1>File details</h1>
+<p>
+    <b>Name:</b> {{ file.name }}
+</p>
+<p>
+    <b>Description:</b><br>
+    {{ file.description|raw|nl2br }}
+</p>
+{%- if file.preview -%}
+<p>
+    <b>Preview:</b><br>
+    <img src="/assets/img/{{ file.preview.image }}" alt="{{ file.preview.alt }}" class="viewable">
+</p>
+<p>
+    <a href="/assets/files/{{ file.name }}">
+        <img style="vertical-align:middle" src="/assets/img/download.png">
+        Download now{#
+  #}</a>
+    ({{ file.size }})
+</p>
+{%- endif -%}
+{% endblock %}
