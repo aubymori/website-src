@@ -28,6 +28,10 @@ ul {
     padding-left: 25px;
 }
 
+img.viewable {
+    cursor: zoom-in;
+}
+
 #root {
     width: 900px;
 }
@@ -60,6 +64,56 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
     margin-right: 8px;
+}
+
+#noscript-alert {
+    width: 900px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-top: 8px;
+    background: #c00;
+    font-weight: 700;
+}
+
+#image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .65);
+    text-align: center;
+    display: none;
+}
+
+body.image-viewer-visible {
+    overflow-y: hidden;
+}
+
+body.image-viewer-visible #image-viewer {
+    display: block;
+}
+
+
+#image-viewer-aligner {
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#image-viewer-inner {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+#image-viewer-image {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#image-viewer-link {
+    color: #fff !important;
 }
 
 #content {

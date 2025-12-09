@@ -5,12 +5,30 @@
         <meta charset="UTF-8">
         <title>{{ title ? title ~ " - " }}aubymori's website</title>
         <link rel="stylesheet" href="/assets/css/core.css">
+        {%- if using_image_viewer -%}
+        <noscript>
+            <style>
+                img.viewable {
+                    cursor: default;
+                }
+            </style>
+        </noscript>
+        {%- endif -%}
         {% block css %}{% endblock %}
     </head>
     <body>
         {# Block for JS that should run before the page
            loads (e.g. redirection) #}
         {% block early_js %}{% endblock %}
+        {%- if using_image_viewer -%}
+        <div id="image-viewer">
+            <span id="image-viewer-aligner"></span>
+            <div id="image-viewer-inner">
+                <img id="image-viewer-image" src="">
+                <a href="" target="_blank" id="image-viewer-link">View original image</a>
+            </div>
+        </div>
+        {%- endif -%}
         <div id="root">
             <div id="header">
                 <a href="/" id="logo">aubymori</a>
@@ -22,6 +40,13 @@
                 <a href="/tools">Tools</a>
                 <a href="/guides">Guides</a>
             </div>
+            {%- if js_required -%}
+            <noscript>
+                <div id="noscript-alert">
+                    This page will not work without JavaScript enabled. Please enable JavaScript to use this page.
+                </div>
+            </noscript>
+            {%- endif -%}
             <div id="content">
                 {% block content %}{% endblock %}
             </div>
@@ -30,6 +55,9 @@
             <span id="copyright">Copyright &copy; {{ "now"|date("Y") }} aubymori</span>
             {%- endif -%}
         </div>
+        {%- if using_image_viewer -%}
+        <script src="/assets/js/image_viewer.js"></script>
+        {%- endif -%}
         {% block js %}{% endblock %}
     </body>
 </html>
