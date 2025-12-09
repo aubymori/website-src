@@ -17,7 +17,7 @@ body, input, button, textarea {
 
 a {
     text-decoration: none;
-    color: #7931d8 !important;
+    color: #b780ff !important;
 }
 
 a:hover,
@@ -95,7 +95,6 @@ body.image-viewer-visible #image-viewer {
     display: block;
 }
 
-
 #image-viewer-aligner {
     height: 100%;
     vertical-align: middle;
@@ -126,7 +125,7 @@ body.image-viewer-visible #image-viewer {
 }
 
 .box {
-    background: #111;
+    background: #161422;
     padding: 8px;
     box-sizing: border-box;
 }
@@ -166,10 +165,6 @@ body.image-viewer-visible #image-viewer {
     margin-right: 8px;
     width: 250px;
     float: left;
-}
-
-#left-col a {
-    color: #957ABA !important;
 }
 
 #right-col {
