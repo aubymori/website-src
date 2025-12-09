@@ -1,0 +1,21 @@
+{% extends "subnav.html" %}
+
+{% set title = "GUID to bytes" %}
+{% set js_required = true %}
+
+{% block js %}
+<script src="/assets/js/guid_to_bytes.js"></script>
+{% endblock %}
+
+{% block col_two_content %}
+<h1>GUID to bytes</h1>
+<p>
+    This utility converts a GUID string to its raw
+    little endian representation.
+</p>
+<label for="guid-to-bytes-guid">GUID:</label>
+<input id="guid-to-bytes-guid" type="text">
+<br>
+<label for="guid-out">Output:</label>
+<input type="text" id="guid-out" readonly="true">
+{% endblock %}

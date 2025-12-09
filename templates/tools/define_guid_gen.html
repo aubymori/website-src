@@ -1,0 +1,24 @@
+{% extends "subnav.html" %}
+
+{% set title = "DEFINE_GUID generator" %}
+{% set js_required = true %}
+
+{% block js %}
+<script src="/assets/js/define_guid_gen.js"></script>
+{% endblock %}
+
+{% block col_two_content %}
+<h1>DEFINE_GUID generator</h1>
+<p>
+    This utility generates a DEFINE_GUID statement for
+    a specific GUID.
+</p>
+<label for="define-guid-name">Name:</label>
+<input id="define-guid-name" type="text">
+<br>
+<label for="define-guid-guid">GUID:</label>
+<input id="define-guid-guid" type="text">
+<br>
+<label for="guid-out">Output:</label>
+<pre id="define-guid-out"></pre>
+{% endblock %}

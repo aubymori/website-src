@@ -260,3 +260,40 @@ foreach ($files as $i => $file)
 
     $data->subnav->items[$i]->selected = false;
 }
+
+$tools = [
+    (object)[
+        "title" => "GUID to bytes",
+        "id" => "guid_to_bytes"
+    ],
+    (object)[
+        "title" => "DEFINE_GUID generator",
+        "id" => "define_guid_gen"
+    ],
+    (object)[
+        "title" => "SVG rasterizer",
+        "id" => "svg_rasterizer"
+    ],
+];
+
+$subnav_data = (object)[
+    "subnav" => (object)[
+        "title" => "Tools",
+        "items" => [],
+    ]
+];
+
+foreach ($tools as $tool)
+{
+    $subnav_data->subnav->items[] = (object)[
+        "title" => $tool->title,
+        "url" => "/tools/" . $tool->id
+    ];
+}
+
+foreach ($tools as $i => $tool)
+{
+    $subnav_data->subnav->items[$i]->selected = true;
+    build_page("tools/" . $tool->id, data: (array)$subnav_data);
+    $subnav_data->subnav->items[$i]->selected = false;
+}

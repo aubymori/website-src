@@ -29,6 +29,34 @@ ul {
     padding-left: 25px;
 }
 
+input[type="text"],
+input[type="number"],
+textarea,
+pre {
+    appearance: none;
+    background-color: #000;
+    border: 1px solid #444;
+    color: #fff;
+    outline: 0 !important;
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+
+input[type="text"]:disabled,
+input[type="text"][readonly],
+input[type="number"]:disabled,
+input[type="number"][readonly] {
+    color: #999;
+}
+
+pre, textarea {
+    min-height: 5em;
+    word-wrap: anywhere;
+    white-space: pre-line;
+    margin-top: 4px;
+    margin-left: 0;
+}
+
 img.viewable {
     cursor: zoom-in;
 }

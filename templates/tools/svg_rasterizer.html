@@ -1,0 +1,29 @@
+{% extends "subnav.html" %}
+
+{% set title = "DEFINE_GUID generator" %}
+{% set js_required = true %}
+
+{% block js %}
+<script src="/assets/js/svg_rasterizer.js"></script>
+{% endblock %}
+
+{% block col_two_content %}
+<h1>SVG rasterizer</h1>
+<p>
+    This utility rasterizes SVGs completely within the browser.
+</p>
+<span>SVG:</span>
+<br>
+<textarea id="svg-rasterizer-input"></textarea>
+<br>
+<label for="svg-rasterizer-width">Width:</label>
+<input id="svg-rasterizer-width" type="number">
+<br>
+<label for="svg-rasterizer-height">Height:</label>
+<input id="svg-rasterizer-height" type="number">
+<br>
+<span>Output:</span>
+<br>
+<canvas id="svg-rasterizer-output" width="1" height="1"
+        style="width:1px;height:1px"></canvas>
+{% endblock %}
