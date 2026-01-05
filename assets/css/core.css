@@ -214,3 +214,9 @@ body.image-viewer-visible #image-viewer {
 .subnav-item.selected {
     font-weight: 700;
 }
+
+.date {
+    color: #AAA;
+    font-style: italic;
+    margin-top: 4px;
+}

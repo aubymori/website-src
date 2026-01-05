@@ -1,0 +1,19 @@
+{% extends "core.html" %}
+
+{% set title = "Blog" %}
+
+{% block css %}
+<link rel="stylesheet" href="/assets/css/blog.css">
+{% endblock %}
+
+{% block content %}
+<div id="main-content" class="box">
+    <h1>Blog</h1>
+    {% for entry in entries %}
+    <div class="blog-entry">
+        <h2><a href="/blog/{{ entry.id }}">{{ entry.title }}</a></h2>
+        <span class="date">Published {{ entry.date }}</span>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

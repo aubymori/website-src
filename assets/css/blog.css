@@ -1,0 +1,13 @@
+.blog-entry h2 {
+    margin: 4px 0;
+}
+
+.blog-entry:not(:last-child) {
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #3f3961;
+}
+
+h1 {
+    margin: 4px 0;
+}

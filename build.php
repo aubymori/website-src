@@ -47,6 +47,9 @@ if ($prod_mode)
     /* Remove Apache .htaccess */
     @unlink(BuildContext::$outDir . "/.htaccess");
 
+    /* Remove bogus blog html */
+    @unlink(BuildContext::$outDir . "/blog/index.html");
+
     /* Add GitHub 404.md */
     file_put_contents(BuildContext::$outDir . "/404.md",
         "---\n" .
@@ -297,3 +300,22 @@ foreach ($tools as $i => $tool)
     build_page("tools/" . $tool->id, data: (array)$subnav_data);
     $subnav_data->subnav->items[$i]->selected = false;
 }
+
+$entries = [
+    (object)[
+        "title" => "Editing the registry of an offline Windows install",
+        "date"  => "2024/11/12",
+        "id"    => "editing_offline_registry"
+    ],
+];
+
+foreach ($entries as $entry)
+{
+    $template = "blog/" . $entry->id;
+    build_page($template, $template, [ "entry" => $entry ]);
+}
+
+build_page("blog_entries", "blog", [ "entries" => $entries ]);
+/* Apache LOVES to redirect /blog to /blog/. Can't get it to stop. */
+if (!$prod_mode)
+    build_page("blog_entries", "blog/index", [ "entries" => $entries ]);

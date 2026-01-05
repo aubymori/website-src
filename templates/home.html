@@ -46,7 +46,7 @@
 
 {% macro project_entry(name, url, desc) %}
 <li>
-    <a href="{{ url }}" target="_blank">{{ name }}</a>{% if desc %}: {{ desc }}{% endif %}
+    <a href="{{ url }}" target="_blank">{{ name }}</a>{% if desc %}: {{ desc|raw }}{% endif %}
 </li>
 {% endmacro %}
 
@@ -95,7 +95,9 @@
         <a href="https://twitter.com/leym0naide" target="_blank">main developer's Twitter page</a>.
     </li>
     {{ _self.project_entry(
-        "Lots of mods for Windhawk (50+)", "https://github.com/ramensoftware/windhawk-mods/pulls?q=is%3Apr+author%3Aaubymori+"
+        "Lots of mods for Windhawk (50+)", "https://github.com/ramensoftware/windhawk-mods/pulls?q=is%3Apr+author%3Aaubymori+",
+        "Feel free to send patches over Discord or by opening a pull request on the "
+        ~ "<a href=\"https://github.com/aubymori/windhawk-mods\">aubymori/windhawk-mods</a> repo."
     ) }}
 </ul>
 {% endblock %}
