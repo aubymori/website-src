@@ -62,6 +62,10 @@
     background-image: url("/assets/img/winclassic.png");
 }
 
+.social-icon.lastfm {
+    background-image: url("/assets/img/lastfm.png");
+}
+
 .social-icon.discord {
     background-image: url("/assets/img/discord.png");
 }
@@ -85,6 +89,10 @@
     
     .social-icon.winclassic {
         background-image: url("/assets/img/winclassic@2x.png");
+    }
+
+    .social-icon.lastfm {
+        background-image: url("/assets/img/lastfm@2x.png");
     }
     
     .social-icon.discord {
