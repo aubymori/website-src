@@ -270,6 +270,10 @@ $tools = [
         "id" => "guid_to_bytes"
     ],
     (object)[
+        "title" => "Bytes to GUID",
+        "id" => "bytes_to_guid"
+    ],
+    (object)[
         "title" => "DEFINE_GUID generator",
         "id" => "define_guid_gen"
     ],
